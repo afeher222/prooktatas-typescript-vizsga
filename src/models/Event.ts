@@ -18,6 +18,8 @@ export class Event implements IEvent {
     public deleteParticipant(id: number): void {
         if (this._participants.has(id)){
             this._participants.delete(id);
+        } else {
+            console.log(`User ID=${id} nem volt résztvevője ennek az eseménynek, eventID=${this.id}`);
         }
     }
 
@@ -27,9 +29,8 @@ export class Event implements IEvent {
 
     public listEventInfo() : void {
         console.log(`Event ID=${this.id}, Cím: ${this.title}, Típus: ${this.eventType}`);
-        console.log(`Helyszín: ${this.place}, Időpont: ${this.date}`);
-        console.log('Résztvevők:');
-        this._participants.forEach(user=> console.log(`--> ${user.toString()}`));
+        console.log(`  Helyszín: ${this.place}, Időpont: ${this.date}`);
+        console.log('  Résztvevők:');
+        this._participants.forEach(user=> console.log(`   - ${user.toString()}`));
     }
-
 }
