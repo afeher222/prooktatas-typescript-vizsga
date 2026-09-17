@@ -1,6 +1,7 @@
 import { UserService } from "./UserService"
 import { Event } from "../models/Event"
 import { EventType } from "../utils/EventType";
+import { LogMethod } from "../utils/Logger";
 
 
 export class EventService {
@@ -31,6 +32,7 @@ export class EventService {
         this._events.forEach(event => event.listEventInfo());
     }
 
+    @LogMethod("Jelentkezés")
     public register(userId: number, eventId: number) : void {
         let event = this._events.get(eventId)
         let user = this._users.findUserById(userId);
@@ -45,6 +47,7 @@ export class EventService {
         event.addParticipant(user);
     }
 
+    @LogMethod("Jelentkezés törlése")    
     public unregister(userId: number, eventId: number) : void {
         let event = this._events.get(eventId)
         let user = this._users.findUserById(userId);

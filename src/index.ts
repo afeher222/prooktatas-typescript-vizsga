@@ -39,6 +39,9 @@ eventService.register(2, 1);
 eventService.register(3, 1);
 eventService.register(1, 2);
 eventService.register(2, 2);
+eventService.register(3, 2);
+eventService.register(4, 2);
+eventService.register(5, 2);
 eventService.register(2, 3);
 eventService.register(3, 3);
 
