@@ -1,10 +1,12 @@
 {
   "scripts": {
+    "start": "ts-node src/index.ts",
     "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "jest": "^30.5.1",
-    "ts-jest": "^29.4.12"
+    "ts-jest": "^29.4.12",
+    "ts-node": "^10.9.2"
   }
 }
